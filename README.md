@@ -1,4 +1,4 @@
-# imageprocessingsoftware
+# IMAGE PROCESSING GUI
 
 # PREVIEW
 ![1](https://user-images.githubusercontent.com/104710227/184663193-f611cca5-45cd-421c-8fa7-9f6ce333fc8d.jpg)
