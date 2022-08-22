@@ -161,145 +161,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.IMAGEPROCESSINGUIFigure.Color = [1 1 1];
             app.IMAGEPROCESSINGUIFigure.Position = [100 100 1080 660];
             app.IMAGEPROCESSINGUIFigure.Name = 'IMAGE PROCESSING';
-
-            % HISTOGRAM Button
-            app.HISTOGRAMButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.HISTOGRAMButton.ButtonPushedFcn = createCallbackFcn(app, @HISTOGRAMButtonPushed, true);
-            app.HISTOGRAMButton.BackgroundColor = [1 1 1];
-            app.HISTOGRAMButton.FontWeight = 'bold';
-            app.HISTOGRAMButton.Position = [972 9 100 90];
-            app.HISTOGRAMButton.Text = 'HISTOGRAM';
-
-            % RESET Button
-            app.RESETButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.RESETButton.ButtonPushedFcn = createCallbackFcn(app, @RESETButtonPushed, true);
-            app.RESETButton.BackgroundColor = [0.302 0.7451 0.9333];
-            app.RESETButton.FontWeight = 'bold';
-            app.RESETButton.Position = [12 560 100 41];
-            app.RESETButton.Text = 'RESET';
-
-            % BLUE Button
-            app.BLUEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.BLUEButton.ButtonPushedFcn = createCallbackFcn(app, @BLUEButtonPushed, true);
-            app.BLUEButton.BackgroundColor = [0 0 1];
-            app.BLUEButton.FontWeight = 'bold';
-            app.BLUEButton.FontColor = [1 1 1];
-            app.BLUEButton.Position = [621 11 100 90];
-            app.BLUEButton.Text = 'BLUE';
-
-            % EDGE Button
-            app.EDGEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.EDGEButton.ButtonPushedFcn = createCallbackFcn(app, @EDGEButtonPushed, true);
-            app.EDGEButton.BackgroundColor = [0.502 0.502 0.502];
-            app.EDGEButton.FontWeight = 'bold';
-            app.EDGEButton.Position = [11 339 100 90];
-            app.EDGEButton.Text = 'EDGE';
-
-            % SAVE Button
-            app.SAVEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.SAVEButton.ButtonPushedFcn = createCallbackFcn(app, @SAVEButtonPushed, true);
-            app.SAVEButton.BackgroundColor = [1 1 0];
-            app.SAVEButton.FontWeight = 'bold';
-            app.SAVEButton.Position = [972 557 100 41];
-            app.SAVEButton.Text = 'SAVE';
-
-
-            % IMAGEPROCESSING Label
-            app.IMAGEPROCESSINGLabel = uilabel(app.IMAGEPROCESSINGUIFigure);
-            app.IMAGEPROCESSINGLabel.BackgroundColor = [0.4941 0.1843 0.5569];
-            app.IMAGEPROCESSINGLabel.HorizontalAlignment = 'center';
-            app.IMAGEPROCESSINGLabel.FontWeight = 'bold';
-            app.IMAGEPROCESSINGLabel.FontColor = [1 1 1];
-            app.IMAGEPROCESSINGLabel.Position = [11 617 1060 34];
-            app.IMAGEPROCESSINGLabel.Text = 'IMAGE PROCESSING';
-
-            % RED Button
-            app.REDButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.REDButton.ButtonPushedFcn = createCallbackFcn(app, @REDButtonPushed, true);
-            app.REDButton.BackgroundColor = [1 0 0];
-            app.REDButton.FontWeight = 'bold';
-            app.REDButton.FontColor = [1 1 1];
-            app.REDButton.Position = [360 11 100 90];
-            app.REDButton.Text = 'RED ';
-
-            % GREEN Button
-            app.GREENButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.GREENButton.ButtonPushedFcn = createCallbackFcn(app, @GREENButtonPushed, true);
-            app.GREENButton.BackgroundColor = [0.3922 0.8314 0.0745];
-            app.GREENButton.FontWeight = 'bold';
-            app.GREENButton.FontColor = [1 1 1];
-            app.GREENButton.Position = [490 11 100 90];
-            app.GREENButton.Text = 'GREEN';
-
-            % SHARPENING Button
-            app.SHARPENINGButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.SHARPENINGButton.ButtonPushedFcn = createCallbackFcn(app, @SHARPENINGButtonPushed, true);
-            app.SHARPENINGButton.BackgroundColor = [0.4941 0.1843 0.5569];
-            app.SHARPENINGButton.FontWeight = 'bold';
-            app.SHARPENINGButton.FontColor = [1 1 1];
-            app.SHARPENINGButton.Position = [972 449 100 90];
-            app.SHARPENINGButton.Text = 'SHARPENING';
-
-            % HISTOGRAMEQUALIZATION Button
-            app.HISTOGRAMEQUALIZATIONButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.HISTOGRAMEQUALIZATIONButton.ButtonPushedFcn = createCallbackFcn(app, @HISTOGRAMEQUALIZATIONButtonPushed, true);
-            app.HISTOGRAMEQUALIZATIONButton.BackgroundColor = [0.9373 0.6902 1];
-            app.HISTOGRAMEQUALIZATIONButton.FontWeight = 'bold';
-            app.HISTOGRAMEQUALIZATIONButton.FontColor = [1 1 1];
-            app.HISTOGRAMEQUALIZATIONButton.Position = [972 119 100 90];
-            app.HISTOGRAMEQUALIZATIONButton.Text = {'HISTOGRAM'; 'EQUALIZATION'};
-
-            % POWERLAW Button
-            app.POWERLAWButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.POWERLAWButton.ButtonPushedFcn = createCallbackFcn(app, @POWERLAWButtonPushed, true);
-            app.POWERLAWButton.BackgroundColor = [0.8784 0.3882 1];
-            app.POWERLAWButton.FontWeight = 'bold';
-            app.POWERLAWButton.FontColor = [1 1 1];
-            app.POWERLAWButton.Position = [972 229 100 90];
-            app.POWERLAWButton.Text = 'POWER LAW';
-
-            % SMOOTHENING Button
-            app.SMOOTHENINGButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.SMOOTHENINGButton.ButtonPushedFcn = createCallbackFcn(app, @SMOOTHENINGButtonPushed, true);
-            app.SMOOTHENINGButton.BackgroundColor = [0.7255 0.3059 0.8314];
-            app.SMOOTHENINGButton.FontWeight = 'bold';
-            app.SMOOTHENINGButton.FontColor = [1 1 1];
-            app.SMOOTHENINGButton.Position = [972 339 100 90];
-            app.SMOOTHENINGButton.Text = 'SMOOTHENING';
-
-            % SKELETON Button
-            app.SKELETONButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.SKELETONButton.ButtonPushedFcn = createCallbackFcn(app, @SKELETONButtonPushed, true);
-            app.SKELETONButton.BackgroundColor = [0.8 0.8 0.8];
-            app.SKELETONButton.FontWeight = 'bold';
-            app.SKELETONButton.Position = [11 119 100 90];
-            app.SKELETONButton.Text = 'SKELETON';
-
-            % BINARY Button
-            app.BINARYButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.BINARYButton.ButtonPushedFcn = createCallbackFcn(app, @BINARYButtonPushed, true);
-            app.BINARYButton.BackgroundColor = [0.9412 0.9412 0.9412];
-            app.BINARYButton.FontWeight = 'bold';
-            app.BINARYButton.Position = [11 9 100 90];
-            app.BINARYButton.Text = 'BINARY';
-
-            % INVERT Button
-            app.INVERTButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.INVERTButton.ButtonPushedFcn = createCallbackFcn(app, @INVERTButtonPushed, true);
-            app.INVERTButton.BackgroundColor = [0.651 0.651 0.651];
-            app.INVERTButton.FontWeight = 'bold';
-            app.INVERTButton.Position = [11 229 100 90];
-            app.INVERTButton.Text = 'INVERT';
-
-            % GRAYSCALE Button
-            app.GRAYSCALEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.GRAYSCALEButton.ButtonPushedFcn = createCallbackFcn(app, @GRAYSCALEButtonPushed, true);
-            app.GRAYSCALEButton.BackgroundColor = [0 0 0];
-            app.GRAYSCALEButton.FontWeight = 'bold';
-            app.GRAYSCALEButton.FontColor = [1 1 1];
-            app.GRAYSCALEButton.Position = [11 449 100 90];
-            app.GRAYSCALEButton.Text = 'GRAYSCALE';
-
+            
             % UIAxes
             app.UIAxes = uiaxes(app.IMAGEPROCESSINGUIFigure);
             title(app.UIAxes, 'INPUT')
@@ -328,6 +190,154 @@ classdef imageprocessing < matlab.apps.AppBase
             app.UIAxes2.Position = [542 109 420 429];
 
             app.IMAGEPROCESSINGUIFigure.Visible = 'on';
+            
+            % IMAGEPROCESSING Label
+            app.IMAGEPROCESSINGLabel = uilabel(app.IMAGEPROCESSINGUIFigure);
+            app.IMAGEPROCESSINGLabel.BackgroundColor = [0.4941 0.1843 0.5569];
+            app.IMAGEPROCESSINGLabel.HorizontalAlignment = 'center';
+            app.IMAGEPROCESSINGLabel.FontWeight = 'bold';
+            app.IMAGEPROCESSINGLabel.FontColor = [1 1 1];
+            app.IMAGEPROCESSINGLabel.Position = [11 617 1060 34];
+            app.IMAGEPROCESSINGLabel.Text = 'IMAGE PROCESSING';
+            
+            %  UPLOAD Button
+            app.UPLOADButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.UPLOADButton.ButtonPushedFcn = createCallbackFcn(app, @UPLOADButtonPushed, true);
+            app.UPLOADButton.IconAlignment = 'center';
+            app.UPLOADButton.BackgroundColor = [0.4667 0.6745 0.1882];
+            app.UPLOADButton.FontWeight = 'bold';
+            app.UPLOADButton.FontColor = [1 1 1];
+            app.UPLOADButton.Position = [490 560 100 41];
+            app.UPLOADButton.Text = 'UPLOAD';
+            
+            % RESET Button
+            app.RESETButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.RESETButton.ButtonPushedFcn = createCallbackFcn(app, @RESETButtonPushed, true);
+            app.RESETButton.BackgroundColor = [0.302 0.7451 0.9333];
+            app.RESETButton.FontWeight = 'bold';
+            app.RESETButton.Position = [12 560 100 41];
+            app.RESETButton.Text = 'RESET';
+            
+            % SAVE Button
+            app.SAVEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.SAVEButton.ButtonPushedFcn = createCallbackFcn(app, @SAVEButtonPushed, true);
+            app.SAVEButton.BackgroundColor = [1 1 0];
+            app.SAVEButton.FontWeight = 'bold';
+            app.SAVEButton.Position = [972 557 100 41];
+            app.SAVEButton.Text = 'SAVE';
+            
+            % GRAYSCALE Button
+            app.GRAYSCALEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.GRAYSCALEButton.ButtonPushedFcn = createCallbackFcn(app, @GRAYSCALEButtonPushed, true);
+            app.GRAYSCALEButton.BackgroundColor = [0 0 0];
+            app.GRAYSCALEButton.FontWeight = 'bold';
+            app.GRAYSCALEButton.FontColor = [1 1 1];
+            app.GRAYSCALEButton.Position = [11 449 100 90];
+            app.GRAYSCALEButton.Text = 'GRAYSCALE';
+            
+            % BINARY Button
+            app.BINARYButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.BINARYButton.ButtonPushedFcn = createCallbackFcn(app, @BINARYButtonPushed, true);
+            app.BINARYButton.BackgroundColor = [0.9412 0.9412 0.9412];
+            app.BINARYButton.FontWeight = 'bold';
+            app.BINARYButton.Position = [11 9 100 90];
+            app.BINARYButton.Text = 'BINARY';
+            
+            % EDGE Button
+            app.EDGEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.EDGEButton.ButtonPushedFcn = createCallbackFcn(app, @EDGEButtonPushed, true);
+            app.EDGEButton.BackgroundColor = [0.502 0.502 0.502];
+            app.EDGEButton.FontWeight = 'bold';
+            app.EDGEButton.Position = [11 339 100 90];
+            app.EDGEButton.Text = 'EDGE';
+            
+            % SKELETON Button
+            app.SKELETONButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.SKELETONButton.ButtonPushedFcn = createCallbackFcn(app, @SKELETONButtonPushed, true);
+            app.SKELETONButton.BackgroundColor = [0.8 0.8 0.8];
+            app.SKELETONButton.FontWeight = 'bold';
+            app.SKELETONButton.Position = [11 119 100 90];
+            app.SKELETONButton.Text = 'SKELETON';
+            
+            % INVERT Button
+            app.INVERTButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.INVERTButton.ButtonPushedFcn = createCallbackFcn(app, @INVERTButtonPushed, true);
+            app.INVERTButton.BackgroundColor = [0.651 0.651 0.651];
+            app.INVERTButton.FontWeight = 'bold';
+            app.INVERTButton.Position = [11 229 100 90];
+            app.INVERTButton.Text = 'INVERT';
+            
+            % RED Button
+            app.REDButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.REDButton.ButtonPushedFcn = createCallbackFcn(app, @REDButtonPushed, true);
+            app.REDButton.BackgroundColor = [1 0 0];
+            app.REDButton.FontWeight = 'bold';
+            app.REDButton.FontColor = [1 1 1];
+            app.REDButton.Position = [360 11 100 90];
+            app.REDButton.Text = 'RED ';
+
+            % GREEN Button
+            app.GREENButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.GREENButton.ButtonPushedFcn = createCallbackFcn(app, @GREENButtonPushed, true);
+            app.GREENButton.BackgroundColor = [0.3922 0.8314 0.0745];
+            app.GREENButton.FontWeight = 'bold';
+            app.GREENButton.FontColor = [1 1 1];
+            app.GREENButton.Position = [490 11 100 90];
+            app.GREENButton.Text = 'GREEN';
+
+            % BLUE Button
+            app.BLUEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.BLUEButton.ButtonPushedFcn = createCallbackFcn(app, @BLUEButtonPushed, true);
+            app.BLUEButton.BackgroundColor = [0 0 1];
+            app.BLUEButton.FontWeight = 'bold';
+            app.BLUEButton.FontColor = [1 1 1];
+            app.BLUEButton.Position = [621 11 100 90];
+            app.BLUEButton.Text = 'BLUE';
+
+            % SHARPENING Button
+            app.SHARPENINGButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.SHARPENINGButton.ButtonPushedFcn = createCallbackFcn(app, @SHARPENINGButtonPushed, true);
+            app.SHARPENINGButton.BackgroundColor = [0.4941 0.1843 0.5569];
+            app.SHARPENINGButton.FontWeight = 'bold';
+            app.SHARPENINGButton.FontColor = [1 1 1];
+            app.SHARPENINGButton.Position = [972 449 100 90];
+            app.SHARPENINGButton.Text = 'SHARPENING';
+
+            % SMOOTHENING Button
+            app.SMOOTHENINGButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.SMOOTHENINGButton.ButtonPushedFcn = createCallbackFcn(app, @SMOOTHENINGButtonPushed, true);
+            app.SMOOTHENINGButton.BackgroundColor = [0.7255 0.3059 0.8314];
+            app.SMOOTHENINGButton.FontWeight = 'bold';
+            app.SMOOTHENINGButton.FontColor = [1 1 1];
+            app.SMOOTHENINGButton.Position = [972 339 100 90];
+            app.SMOOTHENINGButton.Text = 'SMOOTHENING';
+            
+            % POWERLAW Button
+            app.POWERLAWButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.POWERLAWButton.ButtonPushedFcn = createCallbackFcn(app, @POWERLAWButtonPushed, true);
+            app.POWERLAWButton.BackgroundColor = [0.8784 0.3882 1];
+            app.POWERLAWButton.FontWeight = 'bold';
+            app.POWERLAWButton.FontColor = [1 1 1];
+            app.POWERLAWButton.Position = [972 229 100 90];
+            app.POWERLAWButton.Text = 'POWER LAW';
+            
+            % HISTOGRAMEQUALIZATION Button
+            app.HISTOGRAMEQUALIZATIONButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.HISTOGRAMEQUALIZATIONButton.ButtonPushedFcn = createCallbackFcn(app, @HISTOGRAMEQUALIZATIONButtonPushed, true);
+            app.HISTOGRAMEQUALIZATIONButton.BackgroundColor = [0.9373 0.6902 1];
+            app.HISTOGRAMEQUALIZATIONButton.FontWeight = 'bold';
+            app.HISTOGRAMEQUALIZATIONButton.FontColor = [1 1 1];
+            app.HISTOGRAMEQUALIZATIONButton.Position = [972 119 100 90];
+            app.HISTOGRAMEQUALIZATIONButton.Text = {'HISTOGRAM'; 'EQUALIZATION'};
+            
+            % HISTOGRAM Button
+            app.HISTOGRAMButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
+            app.HISTOGRAMButton.ButtonPushedFcn = createCallbackFcn(app, @HISTOGRAMButtonPushed, true);
+            app.HISTOGRAMButton.BackgroundColor = [1 1 1];
+            app.HISTOGRAMButton.FontWeight = 'bold';
+            app.HISTOGRAMButton.Position = [972 9 100 90];
+            app.HISTOGRAMButton.Text = 'HISTOGRAM';
+
         end
     end
     methods (Access = public)
