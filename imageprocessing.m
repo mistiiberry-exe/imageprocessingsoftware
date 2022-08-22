@@ -23,7 +23,7 @@ classdef imageprocessing < matlab.apps.AppBase
     end
     methods (Access = private)
 
-        % Button pushed function: UPLOADButton
+        % UPLOAD Button
         function UPLOADButtonPushed(app, event)
            global a;
            [filename,filepath] = uigetfile({'*.*;*.jpg;*.png'});
@@ -32,28 +32,28 @@ classdef imageprocessing < matlab.apps.AppBase
            imshow(a,'Parent',app.UIAxes);
         end
 
-        % Button pushed function: GRAYSCALEButton
+        % GRAYSCALE Button
         function GRAYSCALEButtonPushed(app, event)
             global a;
             b=rgb2gray(a);
             imshow(b,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: INVERTButton
+        % INVERT Button
         function INVERTButtonPushed(app, event)
             global a;
             c=255-a;
             imshow(c,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: BINARYButton
+        % BINARY Button
         function BINARYButtonPushed(app, event)
             global a;
             c=im2bw(a);
             imshow(c,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: EDGEButton
+        % EDGE Button
         function EDGEButtonPushed(app, event)
             global a;
             b=rgb2gray(a);
@@ -61,7 +61,7 @@ classdef imageprocessing < matlab.apps.AppBase
             imshow(c,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: SKELETONButton
+        % SKELETON Button
         function SKELETONButtonPushed(app, event)
             global a;
             b=im2bw(a);
@@ -69,14 +69,14 @@ classdef imageprocessing < matlab.apps.AppBase
             imshow(c,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: SHARPENINGButton
+        % SHARPENING Button
         function SHARPENINGButtonPushed(app, event)
             global a;
             c=imsharpen(a);
             imshow(c,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: SMOOTHENINGButton
+        % SMOOTHENING Button
         function SMOOTHENINGButtonPushed(app, event)
             global a;
             h=fspecial("gaussian");
@@ -84,7 +84,7 @@ classdef imageprocessing < matlab.apps.AppBase
             imshow(c,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: POWERLAWButton
+        % POWERLAW Button
         function POWERLAWButtonPushed(app, event)
             global a;
             gamma= 1.35;
@@ -92,14 +92,14 @@ classdef imageprocessing < matlab.apps.AppBase
             imshow(uint8(c),'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: HISTOGRAMEQUALIZATIONButton
+        % HISTOGRAM EQUALIZATIONButton
         function HISTOGRAMEQUALIZATIONButtonPushed(app, event)
             global a;
             c=histeq(a);
             imshow(c,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: REDButton
+        % RED Button
         function REDButtonPushed(app, event)
             global a;
             [r c d]=size(a);
@@ -110,7 +110,7 @@ classdef imageprocessing < matlab.apps.AppBase
             imshow(tempr,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: GREENButton
+        % GREEN Button
         function GREENButtonPushed(app, event)
             global a;
             [r c d]=size(a);
@@ -121,7 +121,7 @@ classdef imageprocessing < matlab.apps.AppBase
             imshow(tempg,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: BLUEButton
+        % BLUE Button
         function BLUEButtonPushed(app, event)
             global a;
             [r c d]=size(a);
@@ -132,7 +132,7 @@ classdef imageprocessing < matlab.apps.AppBase
             imshow(tempb,'Parent',app.UIAxes2);
         end
 
-        % Button pushed function: SAVEButton
+        % SAVE Button
         function SAVEButtonPushed(app, event)
             filter = {'*.jpg';'*.png'}
             [filename, pathname] = uiputfile(filter);
@@ -140,13 +140,13 @@ classdef imageprocessing < matlab.apps.AppBase
             saveas(fig2Save, newfilename);
         end
 
-        % Button pushed function: RESETButton
+        % RESET Button
         function RESETButtonPushed(app, event)
             cla(app.UIAxes,"reset");
             cla(app.UIAxes2,"reset");
         end
 
-        % Button pushed function: HISTOGRAMButton
+        % HISTOGRAM Button
         function HISTOGRAMButtonPushed(app, event)
             global a;
             b=im2double(a);
@@ -162,7 +162,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.IMAGEPROCESSINGUIFigure.Position = [100 100 1080 660];
             app.IMAGEPROCESSINGUIFigure.Name = 'IMAGE PROCESSING';
 
-            % Create HISTOGRAMButton
+            % HISTOGRAM Button
             app.HISTOGRAMButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.HISTOGRAMButton.ButtonPushedFcn = createCallbackFcn(app, @HISTOGRAMButtonPushed, true);
             app.HISTOGRAMButton.BackgroundColor = [1 1 1];
@@ -170,7 +170,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.HISTOGRAMButton.Position = [972 9 100 90];
             app.HISTOGRAMButton.Text = 'HISTOGRAM';
 
-            % Create RESETButton
+            % RESET Button
             app.RESETButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.RESETButton.ButtonPushedFcn = createCallbackFcn(app, @RESETButtonPushed, true);
             app.RESETButton.BackgroundColor = [0.302 0.7451 0.9333];
@@ -178,7 +178,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.RESETButton.Position = [12 560 100 41];
             app.RESETButton.Text = 'RESET';
 
-            % Create BLUEButton
+            % BLUE Button
             app.BLUEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.BLUEButton.ButtonPushedFcn = createCallbackFcn(app, @BLUEButtonPushed, true);
             app.BLUEButton.BackgroundColor = [0 0 1];
@@ -187,7 +187,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.BLUEButton.Position = [621 11 100 90];
             app.BLUEButton.Text = 'BLUE';
 
-            % Create EDGEButton
+            % EDGE Button
             app.EDGEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.EDGEButton.ButtonPushedFcn = createCallbackFcn(app, @EDGEButtonPushed, true);
             app.EDGEButton.BackgroundColor = [0.502 0.502 0.502];
@@ -195,7 +195,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.EDGEButton.Position = [11 339 100 90];
             app.EDGEButton.Text = 'EDGE';
 
-            % Create SAVEButton
+            % SAVE Button
             app.SAVEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.SAVEButton.ButtonPushedFcn = createCallbackFcn(app, @SAVEButtonPushed, true);
             app.SAVEButton.BackgroundColor = [1 1 0];
@@ -203,17 +203,8 @@ classdef imageprocessing < matlab.apps.AppBase
             app.SAVEButton.Position = [972 557 100 41];
             app.SAVEButton.Text = 'SAVE';
 
-            % Create UPLOADButton
-            app.UPLOADButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
-            app.UPLOADButton.ButtonPushedFcn = createCallbackFcn(app, @UPLOADButtonPushed, true);
-            app.UPLOADButton.IconAlignment = 'center';
-            app.UPLOADButton.BackgroundColor = [0.4667 0.6745 0.1882];
-            app.UPLOADButton.FontWeight = 'bold';
-            app.UPLOADButton.FontColor = [1 1 1];
-            app.UPLOADButton.Position = [490 560 100 41];
-            app.UPLOADButton.Text = 'UPLOAD';
 
-            % Create IMAGEPROCESSINGLabel
+            % IMAGEPROCESSING Label
             app.IMAGEPROCESSINGLabel = uilabel(app.IMAGEPROCESSINGUIFigure);
             app.IMAGEPROCESSINGLabel.BackgroundColor = [0.4941 0.1843 0.5569];
             app.IMAGEPROCESSINGLabel.HorizontalAlignment = 'center';
@@ -222,7 +213,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.IMAGEPROCESSINGLabel.Position = [11 617 1060 34];
             app.IMAGEPROCESSINGLabel.Text = 'IMAGE PROCESSING';
 
-            % Create REDButton
+            % RED Button
             app.REDButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.REDButton.ButtonPushedFcn = createCallbackFcn(app, @REDButtonPushed, true);
             app.REDButton.BackgroundColor = [1 0 0];
@@ -231,7 +222,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.REDButton.Position = [360 11 100 90];
             app.REDButton.Text = 'RED ';
 
-            % Create GREENButton
+            % GREEN Button
             app.GREENButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.GREENButton.ButtonPushedFcn = createCallbackFcn(app, @GREENButtonPushed, true);
             app.GREENButton.BackgroundColor = [0.3922 0.8314 0.0745];
@@ -240,7 +231,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.GREENButton.Position = [490 11 100 90];
             app.GREENButton.Text = 'GREEN';
 
-            % Create SHARPENINGButton
+            % SHARPENING Button
             app.SHARPENINGButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.SHARPENINGButton.ButtonPushedFcn = createCallbackFcn(app, @SHARPENINGButtonPushed, true);
             app.SHARPENINGButton.BackgroundColor = [0.4941 0.1843 0.5569];
@@ -249,7 +240,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.SHARPENINGButton.Position = [972 449 100 90];
             app.SHARPENINGButton.Text = 'SHARPENING';
 
-            % Create HISTOGRAMEQUALIZATIONButton
+            % HISTOGRAMEQUALIZATION Button
             app.HISTOGRAMEQUALIZATIONButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.HISTOGRAMEQUALIZATIONButton.ButtonPushedFcn = createCallbackFcn(app, @HISTOGRAMEQUALIZATIONButtonPushed, true);
             app.HISTOGRAMEQUALIZATIONButton.BackgroundColor = [0.9373 0.6902 1];
@@ -258,7 +249,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.HISTOGRAMEQUALIZATIONButton.Position = [972 119 100 90];
             app.HISTOGRAMEQUALIZATIONButton.Text = {'HISTOGRAM'; 'EQUALIZATION'};
 
-            % Create POWERLAWButton
+            % POWERLAW Button
             app.POWERLAWButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.POWERLAWButton.ButtonPushedFcn = createCallbackFcn(app, @POWERLAWButtonPushed, true);
             app.POWERLAWButton.BackgroundColor = [0.8784 0.3882 1];
@@ -267,7 +258,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.POWERLAWButton.Position = [972 229 100 90];
             app.POWERLAWButton.Text = 'POWER LAW';
 
-            % Create SMOOTHENINGButton
+            % SMOOTHENING Button
             app.SMOOTHENINGButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.SMOOTHENINGButton.ButtonPushedFcn = createCallbackFcn(app, @SMOOTHENINGButtonPushed, true);
             app.SMOOTHENINGButton.BackgroundColor = [0.7255 0.3059 0.8314];
@@ -276,7 +267,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.SMOOTHENINGButton.Position = [972 339 100 90];
             app.SMOOTHENINGButton.Text = 'SMOOTHENING';
 
-            % Create SKELETONButton
+            % SKELETON Button
             app.SKELETONButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.SKELETONButton.ButtonPushedFcn = createCallbackFcn(app, @SKELETONButtonPushed, true);
             app.SKELETONButton.BackgroundColor = [0.8 0.8 0.8];
@@ -284,7 +275,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.SKELETONButton.Position = [11 119 100 90];
             app.SKELETONButton.Text = 'SKELETON';
 
-            % Create BINARYButton
+            % BINARY Button
             app.BINARYButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.BINARYButton.ButtonPushedFcn = createCallbackFcn(app, @BINARYButtonPushed, true);
             app.BINARYButton.BackgroundColor = [0.9412 0.9412 0.9412];
@@ -292,7 +283,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.BINARYButton.Position = [11 9 100 90];
             app.BINARYButton.Text = 'BINARY';
 
-            % Create INVERTButton
+            % INVERT Button
             app.INVERTButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.INVERTButton.ButtonPushedFcn = createCallbackFcn(app, @INVERTButtonPushed, true);
             app.INVERTButton.BackgroundColor = [0.651 0.651 0.651];
@@ -300,7 +291,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.INVERTButton.Position = [11 229 100 90];
             app.INVERTButton.Text = 'INVERT';
 
-            % Create GRAYSCALEButton
+            % GRAYSCALE Button
             app.GRAYSCALEButton = uibutton(app.IMAGEPROCESSINGUIFigure, 'push');
             app.GRAYSCALEButton.ButtonPushedFcn = createCallbackFcn(app, @GRAYSCALEButtonPushed, true);
             app.GRAYSCALEButton.BackgroundColor = [0 0 0];
@@ -309,7 +300,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.GRAYSCALEButton.Position = [11 449 100 90];
             app.GRAYSCALEButton.Text = 'GRAYSCALE';
 
-            % Create UIAxes
+            % UIAxes
             app.UIAxes = uiaxes(app.IMAGEPROCESSINGUIFigure);
             title(app.UIAxes, 'INPUT')
             app.UIAxes.GridLineStyle = 'none';
@@ -324,7 +315,7 @@ classdef imageprocessing < matlab.apps.AppBase
             app.UIAxes.Box = 'on';
             app.UIAxes.Position = [122 109 410 429];
 
-            % Create UIAxes2
+            % UIAxes2
             app.UIAxes2 = uiaxes(app.IMAGEPROCESSINGUIFigure);
             title(app.UIAxes2, 'OUTPUT')
             app.UIAxes2.FontWeight = 'bold';
